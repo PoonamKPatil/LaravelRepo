@@ -20,3 +20,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/home','HomeController@getView');
+
+Route::get('/home/{id}','HomeController@getViewById');
+
+

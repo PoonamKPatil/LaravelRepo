@@ -5,10 +5,16 @@
     </head>
     <body>
         <h1>This is home page</h1>
-        <ul>      
-            @foreach ($info as $key => $info)
-            	<li>{{ $key,$info }}</li>
+              
+            @foreach ($info as $info)
+            <a href="/home/{{$info->id}}">
+            <ul>
+            	<li>{{ $info->name }}</li>
+            	<!-- <li>{{ $info->age }}</li>
+            	<li>{{ $info->designation }}</li> -->
+            </ul>
+            </a>
             @endforeach 
-        </ul>
+        
     </body>
 </html>
