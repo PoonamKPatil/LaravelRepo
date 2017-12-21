@@ -7,7 +7,7 @@
         <h1>This is home page</h1>
               
             @foreach ($info as $info)
-            <a href="/home/{{$info->id}}">
+            <a href="/user/{{$info->id}}">
             <ul>
             	<li>{{ $info->name }}</li>
             	<!-- <li>{{ $info->age }}</li>

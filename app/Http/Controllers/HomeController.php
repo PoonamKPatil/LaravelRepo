@@ -11,14 +11,14 @@ class HomeController extends Controller
     {
     	$info = DB::table('info')->latest()->get();
 
-    	return view('home', compact('info'));
+    	return view('userInfo/home', compact('info'));
     }
 
     public function getViewById($id)
     {
     	$info = DB::table('info')->find($id);
 
-    	return view('showInfo', compact('info'));
+    	return view('userInfo/showInfo', compact('info'));
     }
 }
 

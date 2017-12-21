@@ -19,8 +19,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/home','HomeController@getView');
+Route::get('/user','HomeController@getView');
 
-Route::get('/home/{id}','HomeController@getViewById');
+Route::get('/user/{id}','HomeController@getViewById');
 
 
