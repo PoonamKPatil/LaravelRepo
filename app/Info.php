@@ -8,8 +8,9 @@ class Info extends Model
 {
     protected $table = 'info';
 
-    public static function getFemaleUsers()
+    public function scopeFemaleUsers($query)
     {
-    	return static::where('gender','female')->get();
+
+    	return $query->where('gender','female');
     }
 }

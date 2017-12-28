@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Info;
 use DB;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     public function getView()
     {
@@ -17,11 +17,9 @@ class HomeController extends Controller
         return view('userInfo/home', compact('info'));
     }
 
-    public function getViewById($id)
+    public function getViewById(Info $info)
     {
     	//$info = DB::table('info')->find($id);
-
-    	$info = Info::find($id);
 
     	return view('userInfo/showInfo', compact('info'));
     }
