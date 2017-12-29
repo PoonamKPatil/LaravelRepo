@@ -18,7 +18,12 @@
     		<textarea id="body" name="body" class="form-control"></textarea> 
   		</div>
 
-  		<button type="submit" class="btn btn-default">Submit</button>
-	</form>
+      <div class="form-group">
+  		  <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+
+    @include('layouts.errors')
+
+    </form>
 </div>
 @endsection
