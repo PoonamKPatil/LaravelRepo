@@ -7,6 +7,18 @@ class Post extends Model
 {
    public function comments()
    {
-       return Post::hasMany(Comment::class);
+       return $this->hasMany(Comment::class);
+   }
+
+   public function addComment($body)
+   {
+   		$this->comments()->create(['body'=>$body,'user_id'=>1]);
+   		/*Comment::create([
+
+    			"body" => $body,
+    			"post_id" => $this->id,
+    			"user_id" => 1
+
+    		]);*/
    }
 }
