@@ -8,6 +8,11 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
     public function index()
     {
     	$posts = Post::latest()->get();
@@ -31,19 +36,13 @@ class PostController extends Controller
         	'title' => 'required',
         	'body' =>'required'
         	]);
-    	//create a new post using request data
-        
-        //$post = new Post;
 
-        //$post->title = request('title');
-        //$post->body = request('body');
-    	//save it to database
-    	//$post->save();
+    	POST::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => auth()->id()
 
-
-    	POST::create(request(['title','body']));
-
-    	//and redirect to home page
+            ]);
 
     	return redirect('/');
     }

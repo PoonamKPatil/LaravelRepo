@@ -30,7 +30,7 @@
 
 			      @endforeach
 	        </ul>
-	        
+
 	    </div>
 
 	    <hr>
@@ -53,7 +53,9 @@
 		            </div>
 
 			    </form>
+
 			    @include('layouts.errors')
+			    
 		    </div>
 
 	    </div>

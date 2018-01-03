@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 
 class Post extends Model
 {
@@ -12,7 +13,8 @@ class Post extends Model
 
    public function addComment($body)
    {
-   		$this->comments()->create(['body'=>$body,'user_id'=>1]);
+   	    $this->comments()->create(['body'=>$body,'user_id'=>auth()->id()]);
+
    		/*Comment::create([
 
     			"body" => $body,
@@ -20,5 +22,10 @@ class Post extends Model
     			"user_id" => 1
 
     		]);*/
+   }
+
+   public function user()
+   {
+        return $this->belongsTo(User::class);
    }
 }
