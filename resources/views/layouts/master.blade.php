@@ -19,6 +19,7 @@
   <body>
 
    @include('layouts.header')
+   
      <main role="main" class="container">
         <div class="row">
           
@@ -26,15 +27,11 @@
     
           @include('layouts.sidebar')
     
-        </div><!-- /.row -->
+        </div>
 
-    </main><!-- /.container -->
+    </main>
     
    @include('layouts.footer')
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
    
   </body>
 </html>
