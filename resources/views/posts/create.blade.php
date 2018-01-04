@@ -21,12 +21,12 @@
   		</div>
 
       <div class="form-group">
-  		  <button type="submit" class="btn btn-default">Submit</button>
+  		  <button type="submit" class="btn btn-default">Publish</button>
       </div>
 
     @include('layouts.errors')
 
     </form>
-    
+
 </div>
 @endsection

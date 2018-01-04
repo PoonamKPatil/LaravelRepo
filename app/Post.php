@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -27,5 +28,20 @@ class Post extends Model
    public function user()
    {
         return $this->belongsTo(User::class);
+   }
+
+   public function scopeFilter($query, $filters)
+   {
+        $year = $filters['year'];
+
+        $month = Carbon::parse($filters['month'])->month;
+
+        if($month && $year )
+        {
+            $query->whereMonth('created_at','=',$month)
+                  ->whereYear('created_at','=', $year);
+        }
+
+        
    }
 }

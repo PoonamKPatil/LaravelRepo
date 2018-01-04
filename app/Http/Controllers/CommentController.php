@@ -14,6 +14,7 @@ class CommentController extends Controller
     {
         $this->middleware('auth');
     }
+    
     public function store(Post $post)
     {
     	$this->validate(request(),[
