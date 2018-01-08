@@ -22,7 +22,7 @@ class PostController extends Controller
         $month = request('month');
 
         if($month && $year ) {
-
+            
             $posts = Post::latest()
             ->filter(request(['month','year']))
             ->get();
@@ -48,11 +48,15 @@ class PostController extends Controller
         	'body' =>'required'
         	]);
 
-    	POST::create([
+        auth()->user()->publish(
+            new Post(request(['title','body']))
+            );
+
+    	/*POST::create([
             'title' => request('title'),
             'body' => request('body'),
             'user_id' => auth()->id()
-            ]);
+            ]);*/
 
     	return redirect('/');
     }

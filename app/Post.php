@@ -35,12 +35,10 @@ class Post extends Model
         $year = $filters['year'];
 
         $month = Carbon::parse($filters['month'])->month;
-
-        if($month && $year )
-        {
-            $query->whereMonth('created_at','=',$month)
-                  ->whereYear('created_at','=', $year);
-        }
+        
+        $query->whereMonth('created_at','=',$month)
+              ->whereYear('created_at','=', $year);
+        
         
    }
 

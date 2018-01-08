@@ -11,17 +11,17 @@
 
 		<div class=form-group>
 			<label name="name">Name</label>
-			<input type="text" name="name" class="form-control" id="name">
+			<input type="text" name="name" class="form-control" id="name" required>
 		</div>
 
 		<div class=form-group>
 			<label name="email">Email</label>
-			<input type="email" name="email" class="form-control" id="email">
+			<input type="email" name="email" class="form-control" id="email" required>
 		</div>
 
 		<div class=form-group>
 			<label name="password">Password</label>
-			<input type="password" name="password" class="form-control" id="password">
+			<input type="password" name="password" class="form-control" id="password" required>
 		</div>
 
         <div class=form-group>

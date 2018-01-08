@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Mail\Welcome;
+
 use App\User;
 
 class RegistrationController extends Controller
@@ -26,6 +28,8 @@ class RegistrationController extends Controller
                     'password' => bcrypt(request('password'))]);
 
         auth()->login($user);
+
+        \Mail::to($user)->send(new Welcome);
 
         return redirect()->home();
     }
