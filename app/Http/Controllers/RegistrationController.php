@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Mail\Welcome;
 
+use App\Mail\WelcomeAgain;
+
 use App\User;
 
 class RegistrationController extends Controller
@@ -29,7 +31,7 @@ class RegistrationController extends Controller
 
         auth()->login($user);
 
-        \Mail::to($user)->send(new Welcome);
+        \Mail::to($user)->send(new WelcomeAgain);
 
         return redirect()->home();
     }
