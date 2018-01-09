@@ -41,7 +41,7 @@ class RegistrationForm extends FormRequest
         //dd(bcrypt($userPwd['password']));
 
         $user = User::create(
-            $this->only(['name','email',bcrypt('password')])
+            $this->only(['name','email','password'])
             );
 
         auth()->login($user);

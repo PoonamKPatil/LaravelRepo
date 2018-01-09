@@ -19,7 +19,12 @@
   <body>
 
    @include('layouts.header')
-   
+
+   @if(session('message'))
+     <div class='alert alert-success' role='alert'>
+        {{session('message')}}
+     </div>
+   @endif
      <main role="main" class="container">
         <div class="row">
           
