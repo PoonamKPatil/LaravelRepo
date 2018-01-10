@@ -3,18 +3,19 @@
 namespace App;
 
 use App\User;
+use App\Tag;
 use Carbon\Carbon;
 
 class Post extends Model
 {
    public function comments()
    {
-       return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
    }
 
    public function addComment($body)
    {
-   	    $this->comments()->create(['body'=>$body,'user_id'=>auth()->id()]);
+        $this->comments()->create(['body'=>$body,'user_id'=>auth()->id()]);
 
    		/*Comment::create([
 
@@ -50,5 +51,10 @@ class Post extends Model
             ->groupBy('year','month')
             ->orderByRaw('min(created_at) desc')
             ->get();
+   }
+
+   public function tags()
+   {
+       return $this->belongsToMany(Tag::class);
    }
 }
